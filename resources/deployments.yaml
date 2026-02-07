@@ -1,0 +1,32 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: jellyplex-watched
+  namespace: jellyplex-watched
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jellyplex-watched
+  template:
+    metadata:
+      labels:
+        app: jellyplex-watched
+    spec:
+      containers:
+        - name: jellyplex-watched
+          image: jellyplex-watched
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "America/Detroit"
+          envFrom:
+          - configMapRef:
+              name: plain-config
+          - secretRef:
+            name: secret-config
+          resources: {}

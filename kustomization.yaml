@@ -13,6 +13,12 @@ resources:
 - resources/deployments.yaml
 - resources/external-secrets.yaml
 - resources/namespaces.yaml
+
+images:
+  - name: jellyplex-watched
+    newName: ghcr.io/luigi311/jellyplex-watched
+    newTag: 8.5.0
+
 patches:
 - patch: |-
     apiVersion: apps/v1
