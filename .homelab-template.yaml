@@ -1,0 +1,20 @@
+_commit: v1.12.1-10-g6796849
+_src_path: /Users/crthomas/code/charlesthomas/homelab-template
+additionalResources: ''
+backups: false
+helm: false
+homepageEnabled: false
+ingress: false
+labels: 'app: jellyplex-watched'
+name: jellyplex-watched
+namespace: jellyplex-watched
+pvc: false
+reloader: true
+resources:
+- configmaps.yaml
+- deployments.yaml
+- external-secrets.yaml
+service: false
+serviceAccount: false
+upstreamURL: https://github.com/luigi311/JellyPlex-Watched
+url: https://github.com/charlesthomas/homelab-jellyplex-watched
