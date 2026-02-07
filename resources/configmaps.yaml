@@ -9,16 +9,16 @@ data:
   ## control the direction of syncing. e.g. SYNC_FROM_PLEX_TO_JELLYFIN set to true will cause the updates from plex
   ## to be updated in jellyfin. SYNC_FROM_PLEX_TO_PLEX set to true will sync updates between multiple plex servers
   SYNC_FROM_JELLYFIN_TO_PLEX: "True"
-  # SYNC_FROM_PLEX_TO_JELLYFIN: "True"
-  # SYNC_FROM_PLEX_TO_PLEX: "True"
-  # SYNC_FROM_PLEX_TO_EMBY: "True"
-  # SYNC_FROM_JELLYFIN_TO_JELLYFIN: "True"
-  # SYNC_FROM_JELLYFIN_TO_EMBY: "True"
-  # SYNC_FROM_EMBY_TO_PLEX: "True"
-  # SYNC_FROM_EMBY_TO_JELLYFIN: "True" 
-  # SYNC_FROM_EMBY_TO_EMBY: "True"
+  SYNC_FROM_PLEX_TO_JELLYFIN: "False"
+  SYNC_FROM_PLEX_TO_PLEX: "False"
+  SYNC_FROM_PLEX_TO_EMBY: "False"
+  SYNC_FROM_JELLYFIN_TO_JELLYFIN: "False"
+  SYNC_FROM_JELLYFIN_TO_EMBY: "False"
+  SYNC_FROM_EMBY_TO_PLEX: "False"
+  SYNC_FROM_EMBY_TO_JELLYFIN: "False" 
+  SYNC_FROM_EMBY_TO_EMBY: "False"
   ## Do not mark any shows/movies as played and instead just output to log if they would of been marked.
-  DRYRUN: "True"
+  DRYRUN: "False"
   ## Debugging level, "info" is default, "debug" is more verbose
   DEBUG_LEVEL: "INFO"
   ## If set to true then the script will only run once and then exit
@@ -30,9 +30,9 @@ data:
   ## Mark file where all shows/movies that have been marked as played will be written to
   MARK_FILE: "/tmp/mark.log" 
   ## Timeout for requests for jellyfin
-  REQUEST_TIMEOUT: 300
+  REQUEST_TIMEOUT: "300"
   ## Max threads for processing
-  MAX_THREADS: 1
+  MAX_THREADS: "1"
   ## Generate guids/locations
   ## These are slow processes, so this is a way to speed things up
   ## If media servers are using the same files then you can enable only generate locations
@@ -58,7 +58,7 @@ data:
   ## Recommended to use token as it is faster to connect as it is direct to the server instead of going through the plex servers
   ## URL of the plex server, use hostname or IP address if the hostname is not resolving correctly
   ## Comma separated list for multiple servers
-  PLEX_BASEURL: "https://plex.plex.svc.cluster.local:32400"
+  PLEX_BASEURL: "http://plex.plex.svc.cluster.local:32400"
   ## Plex token https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
   ## Comma separated list for multiple servers
   # PLEX_TOKEN: "SuperSecretToken, SuperSecretToken2"

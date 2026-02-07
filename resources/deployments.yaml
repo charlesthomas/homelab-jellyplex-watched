@@ -24,9 +24,22 @@ spec:
               value: "1000"
             - name: TZ
               value: "America/Detroit"
+            - name: JELLYFIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: secret-config
+                  key: JELLYFIN_TOKEN
+            - name: PLEX_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: secret-config
+                  key: PLEX_TOKEN
+            - name: USER_MAPPING
+              valueFrom:
+                secretKeyRef:
+                  name: secret-config
+                  key: USER_MAPPING
           envFrom:
           - configMapRef:
               name: plain-config
-          - secretRef:
-            name: secret-config
           resources: {}
