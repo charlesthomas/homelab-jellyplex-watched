@@ -18,7 +18,7 @@ data:
   SYNC_FROM_EMBY_TO_JELLYFIN: "False"
   SYNC_FROM_EMBY_TO_EMBY: "False"
   ## Do not mark any shows/movies as played and instead just output to log if they would of been marked.
-  DRYRUN: "True"
+  DRYRUN: "False"
   ## Debugging level, "info" is default, "debug" is more verbose
   DEBUG_LEVEL: "DEBUG"
   ## If set to true then the script will only run once and then exit
