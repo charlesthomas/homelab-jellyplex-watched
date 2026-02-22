@@ -9,7 +9,7 @@ data:
   ## control the direction of syncing. e.g. SYNC_FROM_PLEX_TO_JELLYFIN set to true will cause the updates from plex
   ## to be updated in jellyfin. SYNC_FROM_PLEX_TO_PLEX set to true will sync updates between multiple plex servers
   SYNC_FROM_JELLYFIN_TO_PLEX: "True"
-  SYNC_FROM_PLEX_TO_JELLYFIN: "False"
+  SYNC_FROM_PLEX_TO_JELLYFIN: "True"
   SYNC_FROM_PLEX_TO_PLEX: "False"
   SYNC_FROM_PLEX_TO_EMBY: "False"
   SYNC_FROM_JELLYFIN_TO_JELLYFIN: "False"
@@ -22,9 +22,9 @@ data:
   ## Debugging level, "info" is default, "debug" is more verbose
   DEBUG_LEVEL: "DEBUG"
   ## If set to true then the script will only run once and then exit
-  RUN_ONLY_ONCE: "False"
+  RUN_ONLY_ONCE: "True"
   ## How often to run the script in seconds
-  SLEEP_DURATION: "3600"
+  SLEEP_DURATION: "86400"
   ## Log file where all output will be written to
   LOG_FILE: "/tmp/log.log"
   ## Mark file where all shows/movies that have been marked as played will be written to
