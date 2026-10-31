@@ -5,8 +5,10 @@ namespace: jellyplex-watched
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-jellyplex-watched
-commonLabels:
-  app: jellyplex-watched
+labels:
+- includeSelectors: true
+  pairs:
+    app: jellyplex-watched
 
 resources:
 - resources/configmaps.yaml
@@ -18,3 +20,13 @@ images:
   - name: jellyplex-watched
     newName: ghcr.io/luigi311/jellyplex-watched
     newTag: 8.5.0
+
+patches:
+configMapGenerator:
+- name: grafana-dashboard-jellyplex-watched
+  files:
+  - grafana/jellyplex-watched.json
+  options:
+    disableNameSuffixHash: true
+    labels:
+      grafana_dashboard: "1"
