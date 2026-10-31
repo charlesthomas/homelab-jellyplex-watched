@@ -5,8 +5,10 @@ namespace: jellyplex-watched
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-jellyplex-watched
-commonLabels:
-  app: jellyplex-watched
+labels:
+- includeSelectors: true
+  pairs:
+    app: jellyplex-watched
 
 resources:
 - resources/configmaps.yaml
